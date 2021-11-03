@@ -1,0 +1,26 @@
+{
+  "name": "URL-Shortner-Back",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/michael-lugashi/URL-Shortner-Back.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/michael-lugashi/URL-Shortner-Back/issues"
+  },
+  "homepage": "https://github.com/michael-lugashi/URL-Shortner-Back#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.14"
+  }
+}
