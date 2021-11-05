@@ -1,7 +1,7 @@
 'use strict'
 
 class shortUrlBuilder {
-  constructor(originalUrl) {
+  constructor(originalUrl, shortUrlId) {
     this.originalUrl = originalUrl;
     this.creationDate = new Date(Date.now()).toLocaleString('en-US', {
       month: 'long',
@@ -11,6 +11,7 @@ class shortUrlBuilder {
       minute: '2-digit'
     });
     this.redirectCount = 0
+    this.shortUrl = `http://localhost:3000/redirect/${shortUrlId}`
   }
 }
 // let help = new shortUrlBuilder('ndfksdfk')

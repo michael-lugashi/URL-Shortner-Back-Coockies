@@ -19,8 +19,7 @@
   "homepage": "https://github.com/michael-lugashi/URL-Shortner-Back#readme",
   "dependencies": {
     "cors": "^2.8.5",
-    "express": "^4.17.1",
-    "shortid": "^2.2.16"
+    "express": "^4.17.1"
   },
   "devDependencies": {
     "nodemon": "^2.0.14"

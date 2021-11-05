@@ -8,7 +8,7 @@ const shortId = require('shortid')
 router.post('', (req, res) => {
     const originalUrl = req.body.longURL
     const shortUrlId = shortId.generate()
-    const urlInfo = new shortUrlBuilder(originalUrl)
+    const urlInfo = new shortUrlBuilder(originalUrl, shortUrlId)
     const data = JSON.parse(fs.readFileSync('./src/model/dataBase.json'))
     data[shortUrlId] = urlInfo
 
