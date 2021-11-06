@@ -4,6 +4,7 @@ const router = express.Router();
 const fs = require('fs');
 const validateRedirect = require('../middleware/validateRedirect.js')
 
+// uses the req parameter to find the users orginal url
 router.get('/:shortUrlId', validateRedirect, (req, res) => {
     const shortUrlId = req.params.shortUrlId
     const data = JSON.parse(fs.readFileSync('./src/model/dataBase.json'))
@@ -14,9 +15,6 @@ router.get('/:shortUrlId', validateRedirect, (req, res) => {
     res.redirect(urlInfo.originalUrl)
 });
 
-// function findUrlInfo(id){
-//     return data.filter(urlInfo => urlInfo.shortUrlId === id)[0]
-// }
 
 module.exports = router;
 

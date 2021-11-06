@@ -7,6 +7,7 @@ const validateUrl = require('../middleware/validateUrl.js')
 const urlAlreadyInDataBase = require('../middleware/urlAlreadyInDataBase.js')
 const shortId = require('shortid')
 
+// here I gather all the info from the data base append what the user added and rewrite the database
 router.post('', validateUrl, urlAlreadyInDataBase, (req, res) => {
     const originalUrl = req.body.longURL
     const shortUrlId = shortId.generate()

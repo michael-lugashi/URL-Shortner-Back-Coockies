@@ -14,9 +14,6 @@ class shortUrlBuilder {
     this.shortUrl = `http://localhost:3000/redirect/${shortUrlId}`
   }
 }
-// let help = new shortUrlBuilder('ndfksdfk')
-// console.log(help)
-// help.addOneToCount()
-// console.log(help)
+
 module.exports = shortUrlBuilder
 

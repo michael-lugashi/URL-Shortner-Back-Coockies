@@ -10,12 +10,14 @@ const path = require('path')
 
 app.use(cors());
 app.use(express.json());
+
 app.use('/', express.static('./dist'));
 app.get('/', function (req, res) {
   // serve main path as static file
   res.sendFile(path.resolve('./dist/index.html'));
 });
-app.use('/shortend/list', shortendList);
+
+app.use('/shortend/list', shortendList); // for displaying the list of urls before the user tries to shorten one
 app.use('/redirect', redirect);
 app.use('/shorten', shorten);
 
