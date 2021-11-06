@@ -11,7 +11,7 @@ class shortUrlBuilder {
       minute: '2-digit'
     });
     this.redirectCount = 0
-    this.shortUrl = `http://localhost:3000/redirect/${shortUrlId}`
+    this.shortUrl = `https://url-shortner-04.herokuapp.com/redirect/${shortUrlId}`
   }
 }
 
