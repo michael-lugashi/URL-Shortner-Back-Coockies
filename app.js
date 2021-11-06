@@ -21,6 +21,8 @@ app.use('/shortend/list', shortendList); // for displaying the list of urls befo
 app.use('/redirect', redirect);
 app.use('/shorten', shorten);
 
-app.listen(port, () => {
-  console.log(`Listening on port ${port}`);
-});
+// app.listen(port, () => {
+//   console.log(`Listening on port ${port}`);
+// });
+app.listen(process.env.PORT || 3000,
+    () => console.log("Server is running..."));
