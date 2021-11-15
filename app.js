@@ -2,11 +2,13 @@
 const express = require('express');
 const cors = require('cors');
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000;
 const redirect = require('./src/routers/redirect.js');
 const shorten = require('./src/routers/shorten.js');
 const shortendList = require('./src/routers/shortendList.js')
 const path = require('path')
+require('dotenv').config();
+const mongoose = require('mongoose');
 
 app.use(cors());
 app.use(express.json());
@@ -21,5 +23,15 @@ app.use('/shortend/list', shortendList); // for displaying the list of urls befo
 app.use('/redirect', redirect);
 app.use('/shorten', shorten);
 
-app.listen(process.env.PORT || 3000,
-    () => console.log("Server is running..."));
+mongoose
+  .connect(process.env.dbUri)
+  .then((res) => {
+    app.listen(port, (err) => {
+      if (err) {
+        console.log(err);
+        return;
+      }
+      console.log(`listening on port ${port}`);
+    });
+  })
+  .catch((err) => console.log(err));
